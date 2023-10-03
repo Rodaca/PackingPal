@@ -1,6 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import routes from './routes/cosa.js';
+
+import router from './routes/router.js';
+
+
+
 import cors from 'cors';
 
 
@@ -13,7 +17,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/api/cosa', routes);
+
+app.use('/api', router);
 
 
 app.listen(port, ()=>{
