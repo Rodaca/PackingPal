@@ -1,8 +1,11 @@
 import './App.css';
-import Read from './components/read_Delete';
+
 import {BrowserRouter as Router,Route} from 'react-router-dom'
-import Update from './components/update';
-import Create from './components/create';
+import Read from './components/cosa/read_Delete';
+import Update from './components/cosa/update';
+import Create from './components/cosa/create';
+import Read_Delete_Ropa from './components/Ropa/read_Delete'
+import CategoriaRead from './components/categorias';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
@@ -10,18 +13,22 @@ function App() {
     <Router>
       <div className="App">
         <h2>Tabla de cosas aleatorias</h2>
-        <Link to="/create">
+        <CategoriaRead/>
+        {/* <Link to="/create">
           <button className='main-button'>Crear</button>
-        </Link>
+        </Link> */}
+        <div>
+          <Route exact path="/ropa" component={Read_Delete_Ropa}></Route>
+        </div>
         <div>
           <Route exact path="/" component={Read}></Route>
         </div>
         <div>
             <Route exact path='/update' component = {Update}></Route>
         </div>
-        <div>
+        {/* <div>
           <Route exact path="/create" component={Create}></Route>
-        </div>
+        </div> */}
       </div>
     </Router>
   );

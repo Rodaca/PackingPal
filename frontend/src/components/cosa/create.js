@@ -9,7 +9,7 @@ export default function Create(){
     const [tipo,setTipo]=useState("");
 
     const createData = ()=>{
-        axios.post(`http://localhost:6997/api/cosa/create`,{
+        axios.post(`http://localhost:6998/api/cosa/create`,{
             tipo
         })
            .then((response)=>{

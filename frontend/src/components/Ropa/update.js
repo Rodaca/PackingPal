@@ -9,12 +9,12 @@ export default function Update(){
     const [tipo,setTipo]=useState("");
 
     useEffect(() =>{
-        setId(localStorage.getItem("ID",id));
-        setTipo(localStorage.getItem("Tipo",tipo));
+        setId(localStorage.getItem("IDRopa",id));
+        setTipo(localStorage.getItem("TipoRopa",tipo));
     },[])
 
     const updateData = ()=>{
-        axios.put(`http://localhost:6997/api/cosa/update/${id}`,{
+        axios.put(`http://localhost:6998/api/ropa/update/${id}`,{
             tipo
         })
             .then((response)=>{
