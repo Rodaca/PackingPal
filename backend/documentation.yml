@@ -1,0 +1,137 @@
+swagger: '3.0.0'
+info:
+  version: 1.0.0
+  title: API de Ejemplo
+basePath: /api
+schemes:
+  - http
+host: localhost:6998
+
+tags:
+  name: Collection
+  description: API para interactura con las colecciones como ropa, higiene, electronico, comida, otro
+paths:
+  /{collection}/getAll:
+    get:
+      summary: Obtener todos los datos de la Collection
+      tags: [Collection]
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          type: string
+        - name: accion
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Se recibe en forma de json los datos de la coleccion 
+
+  /{collection}/getOne/{id}:
+    get:
+      summary: Obtener un dato de la colecion por id
+      tags: [Collection]
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          type: string
+        - name: accion
+          in: path
+          required: true
+          type: string
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description:  Se recibe en forma de json el dato de la coleccion 
+
+  /{collection}/insert:
+    post:
+      summary: Insertar una nuevo objeto a la lista de la coleccion
+      tags: [Collection]
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          type: string
+        - name: accion
+          in: path
+          required: true
+          type: string
+      requestBody:
+        description: Datos para la inserción de un nuevo objeto con 2 datos  tipo string y estado bolean
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo:
+                  type: string
+                  description: Nombre del objeto que se va a insertar 
+                estado:
+                  type: boolean
+                  description: Estado del objeto de serie es false
+      responses:
+        201:
+          description: Categoría creada exitosamente
+
+  /{collection}/delete/{id}:
+    delete:
+      summary: Eliminar un objeto de la coleccion por ID
+      tags: [Collection]
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          type: string
+        - name: accion
+          in: path
+          required: true
+          type: string
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        204:
+          description: Categoría eliminada exitosamente
+
+  /{collection}/update/{id}:
+    put:
+      summary: Actualizar un objeto de la coleccion por ID
+      tags: [Collection]
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          type: string
+        - name: accion
+          in: path
+          required: true
+          type: string
+        - name: id
+          in: path
+          required: true
+          type: integer
+      requestBody:
+        description:  Datos para la edicion de un objeto con 2 datos  tipo string y estado bolean
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo:
+                  type: string
+                  description:  Nombre del objeto que se va a actualizar
+                estado:
+                  type: boolean
+                  description: Estado del objeto de serie es false
+      responses:
+        200:
+          description: Categoría actualizada exitosamente
