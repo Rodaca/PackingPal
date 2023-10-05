@@ -31,7 +31,7 @@ export default function Update(){
                     <label>Tipo</label>
                     <Form.Input value={tipo} onChange={(e)=>setTipo(e.target.value)}/>
                 </Form.Field>
-                <Button color="teal" type="submit" onClick={updateData}>Guardar</Button>
+                <Button className="btn_guardar" type="submit" onClick={updateData}>Guardar</Button>
             </Form>
         </div>
     )

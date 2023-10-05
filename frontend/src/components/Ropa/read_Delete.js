@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route} from 'react-router-dom'
 import { Table, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck,faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faCheck,faXmark,faTrash,faPen } from '@fortawesome/free-solid-svg-icons'
 export default function Read() {
     const [dataApi, setDataApi] = useState([]);
 
@@ -69,23 +69,23 @@ export default function Read() {
                                 <Table.Cell>{item.tipo}</Table.Cell>
                                 <Link to='/ropa/update'>
                                     <Table.Cell>
-                                        <Button onClick={() => { setData(item) }}>Actualizar</Button>
+                                        <Button onClick={() => { setData(item) }}><FontAwesomeIcon icon={faPen} style={{color: "#ff7b00",}} /></Button>
                                     </Table.Cell>
                                 </Link>
                                 <Link to='/delete'>
                                     <Table.Cell>
-                                        <Button color='red' onClick={() => { onDelete(item) }}>Eliminar</Button>
+                                        <Button color='red' onClick={() => { onDelete(item) }}><FontAwesomeIcon icon={faTrash} style={{color: "#b42727",}} /></Button>
                                     </Table.Cell>
                                 </Link>
                             </Table.Row>
                         )
                     })}
-
+    
 
                 </Table.Body>
                 
             </Table>
             
         </div>
-    )
+    )   
 }

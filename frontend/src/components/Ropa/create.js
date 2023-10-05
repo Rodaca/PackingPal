@@ -7,14 +7,14 @@ import {useHistory} from "react-router";
 export default function Create(){
     let history = useHistory();
     const [tipo,setTipo]=useState("");
-    const estado=false
+    const estado=true
     const createData = ()=>{
         axios.post(`http://localhost:6998/api/ropa/insert`,{
             tipo,estado
         })
            .then((response)=>{
                  history.push("/ropa");
-                 window.location.reload(false);
+                 window.location.reload();
             })
     }
 
@@ -25,7 +25,7 @@ export default function Create(){
                     <label>Tipo</label>
                     <Form.Input value={tipo} onChange={(e)=>setTipo(e.target.value)}/>
                 </Form.Field>
-                <Button type="submit" onClick={createData}>Guardar</Button>
+                <Button className="btn_guardar" type="submit" onClick={createData}>Guardar</Button>
             </Form>
         </div>
     )

@@ -47,3 +47,28 @@ h2{
   padding: 30px;
   border-radius: 10px;
 }
+
+.main-button{
+  background-color: var(--color-secundario);
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button{border: none;}
+
+.btn_guardar{
+  margin: 5px;
+  background-color: var(--color-principal);
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+} 
