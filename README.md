@@ -20,8 +20,15 @@ También pueden agregar elementos personalizados si no se encuentran en la base 
 Los usuarios podran sisualizar solamente los elemnto que tenga selecionados para su lista
 ## Docmuentacion Api
 
-[Swagger](http://localhost:6998/api-docs/#/)
+[Swagger](http://localhost:6998/api-docs/#/)       (Click aqui)
 
+*Maquetacion*
+
+<img src="./maquetacion.jpeg" alt="Texto alternativo" width="300">
+
+*Diagrama de clases*
+
+<img src="./diagrama_clases.jpeg" alt="Texto alternativo" width="300">
 
 ## Tecnologias Utilizadas
 

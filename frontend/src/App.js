@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Route} from 'react-router-dom'
 /* import Read from './components/cosa/read_Delete';
 import Update from './components/cosa/update'; */
 import Update_Ropa from './components/Ropa/update';
+import Create_Ropa from './components/Ropa/create';
 import Create from './components/cosa/create';
 import Read_Delete_Ropa from './components/Ropa/read_Delete'
 import CategoriaRead from './components/categorias';
@@ -34,7 +35,7 @@ function App() {
           <Route exact path="/create" component={Create}></Route>
         </div> */}
         <div>
-          <Route exact path="/ropa/create" component={Create}></Route>
+          <Route exact path="/ropa/create" component={Create_Ropa}></Route>
         </div>
       </div>
     </Router>
