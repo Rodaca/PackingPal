@@ -21,12 +21,12 @@ export default function CategoriaRead() {
 
 
     return (
-        <div>
+        <div className="categorias">
             {dataApi.map((item)=>{
                 return(
                     <div>
                         <Link to={`/${item.tipo}`}>
-                            <Button>{item.tipo}</Button>
+                            <Button className="btn_categoria">{item.tipo}</Button>
                         </Link>
                         
                     </div>

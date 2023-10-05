@@ -53,6 +53,7 @@ export default function Read() {
                     <Table.Row>
                         <Table.HeaderCell>Estado</Table.HeaderCell>
                         <Table.HeaderCell>Tipo</Table.HeaderCell>
+                        <Table.HeaderCell>Acciones</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
