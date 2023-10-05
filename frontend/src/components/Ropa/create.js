@@ -7,13 +7,12 @@ import {useHistory} from "react-router";
 export default function Create(){
     let history = useHistory();
     const [tipo,setTipo]=useState("");
-
+    const estado=false
     const createData = ()=>{
         axios.post(`http://localhost:6998/api/ropa/create`,{
-            tipo
+            tipo,estado
         })
            .then((response)=>{
-
                  history.push("/ropa");
                  window.location.reload(false);
             })

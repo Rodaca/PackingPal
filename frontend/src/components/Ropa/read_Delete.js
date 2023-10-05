@@ -82,7 +82,9 @@ export default function Read() {
 
 
                 </Table.Body>
+                
             </Table>
+            
         </div>
     )
 }
