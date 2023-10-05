@@ -9,7 +9,7 @@ host: localhost:6998
 
 tags:
   name: Collection
-  description: API para interactura con las colecciones como ropa, higiene, electronico, comida, otro
+  description: API para interactura con las colecciones(collection) como ropa, higiene, electronico, comida, otros
 paths:
   /{collection}/getAll:
     get:

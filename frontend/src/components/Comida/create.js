@@ -9,11 +9,11 @@ export default function Create(){
     const [tipo,setTipo]=useState("");
     const estado=false
     const createData = ()=>{
-        axios.post(`http://localhost:6998/api/ropa/insert`,{
+        axios.post(`http://localhost:6998/api/comida/insert`,{
             tipo,estado
         })
            .then((response)=>{
-                 history.push("/ropa");
+                 history.push("/comida");
                  window.location.reload(false);
             })
     }

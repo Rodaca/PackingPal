@@ -9,17 +9,17 @@ export default function Update(){
     const [tipo,setTipo]=useState("");
 
     useEffect(() =>{
-        setId(localStorage.getItem("IDRopa",id));
-        setTipo(localStorage.getItem("TipoRopa",tipo));
+        setId(localStorage.getItem("IDComida",id));
+        setTipo(localStorage.getItem("TipoComida",tipo));
     },[])
 
     const updateData = ()=>{
-        axios.put(`http://localhost:6998/api/ropa/update/${id}`,{
+        axios.put(`http://localhost:6998/api/comida/update/${id}`,{
             tipo
         })
             .then((response)=>{
 
-                 history.push("/ropa");
+                 history.push("/comida");
                  console.log(response.data);
             })
     }

@@ -5,14 +5,15 @@ import { Table, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck,faXmark } from '@fortawesome/free-solid-svg-icons'
+import Create from "./create";
 export default function Read() {
     const [dataApi, setDataApi] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:6998/api/ropa/getAll`)
+        axios.get(`http://localhost:6998/api/higiene/getAll`)
             .then((res) => {
                 setDataApi(res.data);
-                /* console.log(res.data); */
+                console.log(res.data);
             })
             .catch((error) => {
                 //console.error('Error en la solicitud:', error);
@@ -21,29 +22,29 @@ export default function Read() {
 
     const setData = (dataApi) => {
         const { _id, tipo } = dataApi;
-        localStorage.setItem("IDRopa", _id);
-        localStorage.setItem("TipoRopa", tipo);
+        localStorage.setItem("IDHigiene", _id);
+        localStorage.setItem("TipoHigiene", tipo);
     }
 
     const getData = () => {
-        axios.get(`http://localhost:6998/api/ropa/getAll`)
+        axios.get(`http://localhost:6998/api/higiene/getAll`)
             .then((getData) => {
                 setDataApi(getData.dataApi);
             })
     }
 
     const onDelete = (id) => {
-        axios.delete(`http://localhost:6998/api/ropa/delete/${id._id}`)
+        axios.delete(`http://localhost:6998/api/higiene/delete/${id._id}`)
             .then((res) => {
                 getData(res.data)
-                window.location.href = '/ropa';
+                window.location.href = '/Higiene';
             })
         
     }
 
     return (
         <div>
-            <Link to="/ropa/create">
+            <Link to="/higiene/create">
                 <button className='main-button'>Crear</button>
             </Link>
             
@@ -59,19 +60,18 @@ export default function Read() {
                         return (
                             
                             <Table.Row key={item._id}>
-                                {console.log(item.estado)}
                                 <Table.Cell>
-                                   {item.estado ? 
+                                   {item.estado.condicion ? 
                                     <FontAwesomeIcon icon={faCheck} style={{color: "#28a953",}}/>:
                                     <FontAwesomeIcon icon={faXmark} style={{color: "#d00b0b",}} /> }
                                 </Table.Cell>
                                 <Table.Cell>{item.tipo}</Table.Cell>
-                                <Link to='/ropa/update'>
+                                <Link to='/higiene/update'>
                                     <Table.Cell>
                                         <Button onClick={() => { setData(item) }}>Actualizar</Button>
                                     </Table.Cell>
                                 </Link>
-                                <Link to='/delete'>
+                                <Link to='/higiene/delete'>
                                     <Table.Cell>
                                         <Button color='red' onClick={() => { onDelete(item) }}>Eliminar</Button>
                                     </Table.Cell>
