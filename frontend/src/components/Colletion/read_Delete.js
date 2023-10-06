@@ -49,7 +49,6 @@ export default function Read(props) {
             <Link to={`/${props.collection}/create`}>
                 <button className='main-button'>Crear</button>
             </Link>
-            
             <Table singleLine>
                 <Table.Header>
                     <Table.Row>
