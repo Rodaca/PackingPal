@@ -2,7 +2,7 @@
   text-align: center;
 }
 :root {
-  --color-principal: #9fdd82;
+  --color-principal: rgb(159, 221, 130);
   --color-secundario: #fcca27;
   --color-negro: #000000;
   --color-blanco: #ffffff;
@@ -46,6 +46,7 @@ h2{
   margin: 50px;
   padding: 30px;
   border-radius: 10px;
+  min-height: 100vh;
 }
 
 .main-button{
@@ -72,3 +73,16 @@ button{border: none;}
   border: none;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 } 
+
+.mochila img{
+  width: 100px;
+  position: absolute;
+  top: 320px; 
+  right: 100px;
+}
+
+@media screen and (max-width: 480px) {
+  .main{
+    margin: 10px;
+  }
+}
