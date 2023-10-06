@@ -27,7 +27,8 @@ h2{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .btn_categoria{
@@ -81,8 +82,11 @@ button{border: none;}
   right: 100px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 580px) {
   .main{
     margin: 10px;
+  }
+  .mochila img{
+    right: 10px;
   }
 }
