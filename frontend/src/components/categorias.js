@@ -23,7 +23,7 @@ export default function CategoriaRead() {
                 return (
                     <div key={item.tipo}>
                         <Link to={`/${item.tipo}`}>
-                            <Button className="btn_categoria">{item.tipo}</Button>
+                            <Button onClick={()=>{window.location.href = `/${item.tipo}`}} className="btn_categoria">{item.tipo}</Button>
                         </Link>
                         
                         
