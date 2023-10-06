@@ -5,6 +5,7 @@ import { Table, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck,faXmark,faTrash,faPen } from '@fortawesome/free-solid-svg-icons'
+import Chequeador from "../chequeador";
 export default function Read() {
     const [dataApi, setDataApi] = useState([]);
 
@@ -62,9 +63,7 @@ export default function Read() {
                             <Table.Row key={item._id}>
                                 {console.log(item.estado)}
                                 <Table.Cell>
-                                   {item.estado ? 
-                                    <FontAwesomeIcon icon={faCheck} style={{color: "#28a953",}}/>:
-                                    <FontAwesomeIcon icon={faXmark} style={{color: "#d00b0b",}} /> }
+                                    <Chequeador datos={item}/> 
                                 </Table.Cell>
                                 <Table.Cell>{item.tipo}</Table.Cell>
                                 <Link to='/ropa/update'>

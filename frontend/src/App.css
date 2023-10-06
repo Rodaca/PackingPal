@@ -61,7 +61,9 @@ h2{
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-button{border: none;}
+button{
+  border: none; 
+  background-color: var(--color-blanco)}
 
 .btn_guardar{
   margin: 5px;

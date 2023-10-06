@@ -35,7 +35,6 @@ function App() {
       <div className="App">
         <h1>PACKINGPAL</h1>
         <h2>Categorias</h2>
-        
         <CategoriaRead className=""/>
         <div className='main'>
           <Mochila/>
@@ -85,7 +84,6 @@ function App() {
             <Route exact path="/otros/create" component={Create_Otros}></Route>
           </div>
         </div>
-        
       </div>
     </Router>
   );
